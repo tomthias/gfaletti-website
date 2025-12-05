@@ -72,36 +72,16 @@ body::before {
     transition: background-image 0.5s ease;
 }
 
-/* Horizontal Scroll Container */
-.scroll-container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* Hide Scrollbar visually but allow scroll */
-.scroll-container::-webkit-scrollbar {
-    height: 0px;
-    background: transparent;
-}
-
-.section-wrapper {
-    min-width: 100vw;
+/* Page Container */
+.page-container {
     min-height: 100vh;
-    scroll-snap-align: start;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 120px var(--space-48) var(--space-48);
-    position: relative;
 }
 
-.section-wrapper section {
+.page-container section {
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -588,21 +568,8 @@ footer {
         display: none;
     }
 
-    /* Switch to vertical scroll on mobile */
-    .scroll-container {
-        display: block;
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: auto;
-        scroll-snap-type: none;
-    }
-
-    .section-wrapper {
-        min-width: 100%;
-        min-height: auto;
-        height: auto;
+    .page-container {
         padding: 80px var(--space-24) var(--space-48);
-        scroll-snap-align: none;
     }
 
     .route-image {
