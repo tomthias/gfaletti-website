@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giordano Faletti - Mountain Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">GIORDANO FALETTI</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#routes" data-target="routes">Routes</a></li>
+                    <li><a href="#courses" data-target="courses">Courses</a></li>
+                    <li><a href="#expeditions" data-target="expeditions">Expeditions</a></li>
+                    <li><a href="#contact" data-target="contact">Contact</a></li>
+                </ul>
+                <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+                    <!-- Default to Moon (for Light Mode) -->
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="scroll-container" id="scrollContainer">
+
+        <div class="section-wrapper" id="hero" data-index="1">
+            <section class="hero-content reveal-wrapper">
+                <h1 class="reveal-wrapper delay-1">Giordano Faletti</h1>
+                <p class="subtitle reveal-wrapper delay-2">Mountain Guide · Alpine Experiences</p>
+                <div class="reveal-wrapper delay-3"
+                    style="font-size: 13px; color: var(--color-text-light); margin-bottom: var(--space-48); letter-spacing: 0.3px;">
+                    UIAGM Certified | 28+ Years Experience
+                </div>
+                <div class="hero-cta reveal-wrapper delay-4">
+                    <a href="#routes" class="btn btn-primary">View Routes</a>
+                    <a href="#contact" class="btn btn-secondary">Inquire</a>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-wrapper" id="routes" data-index="2">
+            <section>
+                <h2 class="reveal-wrapper">Signature Routes</h2>
+                <div class="routes-grid">
+                    <a href="https://www.planetmountain.com/en/news/alpinism/the-pillar-new-rock-climb-up-pilastro-dlait-paganella-italy.html"
+                        target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        <div class="route-card reveal-wrapper delay-1">
+                            <div class="route-image"></div>
+                            <div class="route-content">
+                                <h3>The Pillar</h3>
+                                <span class="route-difficulty">7c · 4 Pitches · 2024</span>
+                                <p class="route-description">Pilastro Dlait, Paganella. Modern alpine climbing with
+                                    exposed
+                                    pitches and stunning panoramas.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.planetmountain.com/en/news/ice-climbing/happy-ending-new-ice-climb-on-paganella-italy.html"
+                        target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        <div class="route-card reveal-wrapper delay-2">
+                            <div class="route-image"></div>
+                            <div class="route-content">
+                                <h3>Happy Ending</h3>
+                                <span class="route-difficulty">Ice · WI5 · 2016</span>
+                                <p class="route-description">Val Trementina, Paganella. A challenging ice line, perfect
+                                    for
+                                    testing winter mountaineering skills.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-wrapper" id="courses" data-index="3">
+            <section>
+                <h2 class="reveal-wrapper">Instruction</h2>
+                <div class="courses-grid">
+                    <div class="course-card reveal-wrapper delay-1">
+                        <div class="course-icon">❄️</div>
+                        <h3>Nivologia</h3>
+                        <p>Snow science, avalanche awareness, and winter safety techniques for independent mountaineers.
+                        </p>
+                        <a href="#contact"
+                            style="color: var(--color-accent); text-decoration: none; font-size: 13px; font-weight: 600;">Details
+                            →</a>
+                    </div>
+
+                    <div class="course-card reveal-wrapper delay-2">
+                        <div class="course-icon">📡</div>
+                        <h3>ARTVA Safety</h3>
+                        <p>Avalanche rescue equipment mastery and search techniques. Essential for freeriders.</p>
+                        <a href="#contact"
+                            style="color: var(--color-accent); text-decoration: none; font-size: 13px; font-weight: 600;">Details
+                            →</a>
+                    </div>
+
+                    <div class="course-card reveal-wrapper delay-3">
+                        <div class="course-icon">🧗</div>
+                        <h3>Alpine Mix</h3>
+                        <p>Advanced techniques for rock, ice, and mixed terrain. Transition from crag to big wall.</p>
+                        <a href="#contact"
+                            style="color: var(--color-accent); text-decoration: none; font-size: 13px; font-weight: 600;">Details
+                            →</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-wrapper" id="expeditions" data-index="4">
+            <section>
+                <h2 class="reveal-wrapper">Timeline</h2>
+                <div class="expeditions-timeline">
+                    <div class="timeline-item reveal-wrapper delay-1">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-title">The Pillar Opens</div>
+                            <div class="timeline-description">Opened new 7c route with Martin Giovanazzi and Elio
+                                Mazzalai at Pilastro Dlait.</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-wrapper delay-2">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2016</div>
+                            <div class="timeline-title">Happy Ending Ice Route</div>
+                            <div class="timeline-description">Established stunning ice climbing route in Val Trementina
+                                for winter alpinists.</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-wrapper delay-3">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1996</div>
+                            <div class="timeline-title">UIAGM Certification</div>
+                            <div class="timeline-description">Certified International Mountain Guide. Beginning of
+                                professional guiding career.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="section-wrapper" id="contact" data-index="5">
+            <section>
+                <div class="contact-section reveal-wrapper">
+                    <h2>Get in Touch</h2>
+                    <p style="margin-bottom: var(--space-32); color: var(--color-text-light);">Planning an adventure?
+                        Let's talk.</p>
+
+                    <div class="contact-value delay-1">
+                        <a href="mailto:g.faletti@gmail.com">g.faletti@gmail.com</a>
+                    </div>
+
+                    <div class="social-links delay-2">
+                        <a href="https://instagram.com/giordanofaletti" class="social-link" title="Instagram"
+                            target="_blank">📷</a>
+                        <a href="mailto:g.faletti@gmail.com" class="social-link" title="Email">✉️</a>
+                    </div>
+
+                    <div style="margin-top: var(--space-48); font-size: 13px; color: var(--color-text-lighter);"
+                        class="delay-3">
+                        Based in Trentino, Italy
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025</p>
+    </footer>
+
+    <script>
+        const scrollContainer = document.getElementById('scrollContainer');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('.section-wrapper');
+
+        // 1. HORIZONTAL SCROLL MAPPING FOR MOUSE WHEEL (Desktop UX Improvement)
+        scrollContainer.addEventListener('wheel', (evt) => {
+            // Only capture vertical scroll if it's dominant (prevents jitter on trackpads moving diagonal)
+            if (Math.abs(evt.deltaY) > Math.abs(evt.deltaX)) {
+                evt.preventDefault();
+                scrollContainer.scrollLeft += evt.deltaY;
+            }
+        });
+
+        // 2. INTERSECTION OBSERVER FOR ANIMATIONS & ACTIVE STATE
+        // This handles showing elements when they enter the screen and updating the nav
+        const observerOptions = {
+            root: scrollContainer,
+            threshold: 0.4 // Trigger when 40% of section is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add class to trigger CSS animations
+                    entry.target.classList.add('section-active');
+
+                    // Update Active Nav Link
+                    const id = entry.target.id;
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // 3. DARK MODE LOGIC
+        const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
+        const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+
+        function updateThemeIcon(isDark) {
+            darkModeToggle.innerHTML = isDark ? sunIcon : moonIcon;
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+            updateThemeIcon(isDark);
+        });
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            updateThemeIcon(true);
+        }
+
+        // 4. SMOOTH SCROLL NAVIGATION
+        document.querySelectorAll('nav a[href^="#"], .btn[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        // Calculate position accurately relative to container
+                        const targetPosition = targetElement.offsetLeft;
+                        scrollContainer.scrollTo({
+                            left: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
