@@ -117,7 +117,6 @@ nav {
     left: 0;
     width: 100%;
     padding: var(--space-20) var(--space-32);
-    background: rgba(248, 247, 243, 0.85);
     backdrop-filter: blur(12px);
     z-index: 1000;
     border-bottom: 1px solid var(--color-border);
@@ -220,8 +219,8 @@ body.dark-mode {
     --color-text: #f7f7f7;
     --color-text-light: #999999;
     --color-text-lighter: #999999;
-    --color-accent: #c2a886;
-    --color-accent-hover: #e0cbb0;
+    --color-accent: #44ADC2;
+    --color-accent-hover: #184953;
     --color-border: rgba(255, 255, 255, 0.08);
 }
 
@@ -230,8 +229,7 @@ body.dark-mode::before {
 }
 
 body.dark-mode nav {
-    background: rgba(30, 30, 30, 0.85);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border)
 }
 
 body.dark-mode .dark-mode-toggle {
