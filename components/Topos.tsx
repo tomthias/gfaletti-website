@@ -1,9 +1,10 @@
 
 import React from 'react';
 
-// Using direct paths to avoid module resolution errors with non-JS assets
-const thePillarTopo = 'assets/the-pillar/the-pillar.route.svg';
-const happyEndingTopo = 'assets/happy-ending/happy-endings-graph.svg';
+// Use absolute string paths to reference assets in the public directory
+// or full URLs for external assets
+const thePillarTopo = 'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/the-pillar.route.svg?raw=true';
+const happyEndingTopo = '/assets/happy-ending/happy-endings-graph.svg';
 
 export const RouteTopo = ({ id }: { id: string }) => {
   if (id === 'the-pillar') {

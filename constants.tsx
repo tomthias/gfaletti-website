@@ -11,11 +11,11 @@ export const ROUTES_DATA: Route[] = [
     aspect: 'SE',
     date: '29/09/2024',
     tags: ['Sport Climbing', 'Technical', 'High Exposure'],
-    mainImage: 'assets/the-pillar/main.jpg',
+    mainImage: 'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/135618.jpg?raw=true',
     gallery: [
-      'assets/the-pillar/1.jpg',
-      'assets/the-pillar/2.jpg',
-      'assets/the-pillar/3.jpg'
+      'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/1.jpg?raw=true',
+      'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/2.jpg?raw=true',
+      'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/3.jpg?raw=true'
     ],
     lead: 'Una sequenza di tiri uno più bello dell\'altro! La storia di questo pilastro è un\'esplorazione semplice e diretta sulle pareti del Sorasass.',
     story: 'L\'accesso a queste pareti avviene normalmente dall\'alto, dal Monte Terlago. Inizialmente l\'avevamo escluso perché l\'avvicinamento sembrava troppo lungo, ma il desiderio di guardare più da vicino non è mai svanito. La roccia è risultata eccezionale fin dai primi tiri! Ne sono usciti quattro tiri: tecnici, fisici e di aderenza.',
