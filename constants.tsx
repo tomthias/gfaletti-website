@@ -1,7 +1,7 @@
 
 import { Route, Course, Experience } from './types';
 
-export const ROUTES_DATA: Route[] = [
+const INITIAL_ROUTES: Route[] = [
   {
     id: 'the-pillar',
     title: 'The Pillar',
@@ -11,11 +11,13 @@ export const ROUTES_DATA: Route[] = [
     aspect: 'SE',
     date: '29/09/2024',
     tags: ['Sport Climbing', 'Technical', 'High Exposure'],
-    mainImage: 'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/135618.jpg?raw=true',
+    mainImage: 'https://raw.githubusercontent.com/tomthias/gfaletti-website/tomthias-patch-1/assets/the-pillar/135620-main-image.jpg',
+    sketchImage: 'https://raw.githubusercontent.com/tomthias/gfaletti-website/tomthias-patch-1/assets/the-pillar/135625.jpg',
     gallery: [
-      'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/1.jpg?raw=true',
-      'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/2.jpg?raw=true',
-      'https://github.com/tomthias/gfaletti-website/blob/615c9153b1dedbaa5f4b22013cb8cd0f3a741d30/assets/the-pillar/3.jpg?raw=true'
+      'https://raw.githubusercontent.com/tomthias/gfaletti-website/tomthias-patch-1/assets/the-pillar/135619.jpg',
+      'https://raw.githubusercontent.com/tomthias/gfaletti-website/tomthias-patch-1/assets/the-pillar/135621.jpg',
+      'https://raw.githubusercontent.com/tomthias/gfaletti-website/tomthias-patch-1/assets/the-pillar/135622.jpg',
+      'https://raw.githubusercontent.com/tomthias/gfaletti-website/tomthias-patch-1/assets/the-pillar/135623.jpg'
     ],
     lead: 'Una sequenza di tiri uno più bello dell\'altro! La storia di questo pilastro è un\'esplorazione semplice e diretta sulle pareti del Sorasass.',
     story: 'L\'accesso a queste pareti avviene normalmente dall\'alto, dal Monte Terlago. Inizialmente l\'avevamo escluso perché l\'avvicinamento sembrava troppo lungo, ma il desiderio di guardare più da vicino non è mai svanito. La roccia è risultata eccezionale fin dai primi tiri! Ne sono usciti quattro tiri: tecnici, fisici e di aderenza.',
@@ -33,7 +35,8 @@ export const ROUTES_DATA: Route[] = [
     aspect: 'E',
     date: 'Dic 2016',
     tags: ['Ice Climbing', 'Vertical', 'Winter'],
-    mainImage: 'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=1600',
+    mainImage: 'https://raw.githubusercontent.com/tomthias/gfaletti-website/tomthias-patch-1/assets/happy-ending/happy-endings-img.jpg',
+    sketchImage: 'https://raw.githubusercontent.com/tomthias/gfaletti-website/f7aaa20c7d43d83e95d636d36ac61ae431a237f2/assets/happy-ending/happy-endings-routes.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&q=80&w=800'
@@ -41,11 +44,19 @@ export const ROUTES_DATA: Route[] = [
     lead: 'Un\'evidente linea di ghiaccio sulla parete est della Val Trementina.',
     story: 'Happy Ending condivide il primo tiro con Nido d\'Aquila. Tre spit sono stati posizionati sul secondo tiro a causa delle condizioni variabili del ghiaccio. Il tiro finale è puro ghiaccio verticale.',
     approach: 'Da Santel, Fai della Paganella. Seguire il sentiero 602.',
-    descent: 'Salire attraverso i mughi per ritrovare il sentiero verso Malga di Fai.',
+    descent: 'Salire attraverso i mughi per ritrovera il sentiero verso Malga di Fai.',
     gear: ['Cams 0.75-3', 'Viti da ghiaccio', 'Mezze corde'],
     climbers: ['Giordano Faletti', 'Luca Caldini', 'Alessio Miori']
   }
 ];
+
+export const getRoutes = (): Route[] => {
+  const stored = localStorage.getItem('gfaletti_custom_routes');
+  const customRoutes = stored ? JSON.parse(stored) : [];
+  return [...INITIAL_ROUTES, ...customRoutes];
+};
+
+export const ROUTES_DATA = getRoutes();
 
 export const COURSES_DATA: Course[] = [
   { id: '1', title: 'Nivologia', description: 'Scienza della neve e consapevolezza delle valanghe per alpinisti indipendenti.', icon: 'Snowflake' },

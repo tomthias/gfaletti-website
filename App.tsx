@@ -7,6 +7,7 @@ import RouteDetail from './pages/RouteDetail';
 import Courses from './pages/Courses';
 import Experiences from './pages/Experiences';
 import Contact from './pages/Contact';
+import Admin from './pages/Admin';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,100 +24,53 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [isOpen]);
-
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-[100] h-20 px-6 sm:px-12 flex justify-between items-center transition-all duration-300">
-        {/* Background Overlay with Blur */}
-        <div className="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5 pointer-events-none" />
+      <nav className="fixed top-0 left-0 w-full z-[100] h-24 px-6 sm:px-16 flex justify-between items-center transition-all duration-500">
+        <div className="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/5 pointer-events-none" />
         
-        {/* Brand Logo - Fixed Letter Spacing */}
         <Link 
           to="/" 
-          className="relative z-[110] text-sm sm:text-lg font-bold tracking-[0.15em] uppercase font-serif hover:text-accent transition-colors"
+          className="relative z-[110] text-sm sm:text-lg font-bold tracking-[0.2em] uppercase font-serif text-white hover:text-accent transition-all"
         >
           GIORDANO FALETTI
         </Link>
         
-        {/* Desktop Links */}
-        <div className="hidden md:flex gap-10 relative z-[110]">
+        <div className="hidden md:flex gap-14 relative z-[110]">
           {navLinks.map(link => (
             <Link 
               key={link.path}
               to={link.path}
-              className={`text-[10px] uppercase tracking-[3px] transition-all hover:text-accent ${
-                location.pathname.startsWith(link.path) ? 'text-accent font-bold' : 'text-white/50'
+              className={`text-[10px] uppercase tracking-[4px] transition-all hover:text-accent group relative ${
+                location.pathname.startsWith(link.path) ? 'text-accent' : 'text-white/40'
               }`}
             >
               {link.name}
+              <span className={`absolute -bottom-2 left-0 h-[1px] bg-accent transition-all duration-500 ${location.pathname.startsWith(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
             </Link>
           ))}
+          <Link to="/admin" className="text-[10px] uppercase tracking-[4px] text-white/10 hover:text-accent transition-colors">
+            Portal
+          </Link>
         </div>
 
-        {/* Improved Hamburger Toggle - No Mask Overflow */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)}
-          className="relative z-[110] w-12 h-12 flex flex-col items-center justify-center md:hidden focus:outline-none"
-          aria-label="Toggle Menu"
-        >
-          <div className="relative w-6 h-5">
-            <span 
-              className={`absolute left-0 block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${
-                isOpen ? 'top-2 rotate-45' : 'top-0'
-              }`} 
-            />
-            <span 
-              className={`absolute left-0 top-2 block w-4 h-0.5 bg-white transition-all duration-200 ease-in-out ml-auto right-0 ${
-                isOpen ? 'opacity-0 scale-x-0' : 'opacity-100 scale-x-100'
-              }`} 
-            />
-            <span 
-              className={`absolute left-0 block w-6 h-0.5 bg-white transition-all duration-300 ease-in-out ${
-                isOpen ? 'top-2 -rotate-45' : 'top-4'
-              }`} 
-            />
-          </div>
+        <button onClick={() => setIsOpen(!isOpen)} className="relative z-[110] md:hidden text-white p-2">
+           <div className="w-6 h-4 flex flex-col justify-between items-end">
+              <span className={`h-[1px] bg-white transition-all duration-300 ${isOpen ? 'w-6 rotate-45 translate-y-[7.5px]' : 'w-6'}`} />
+              <span className={`h-[1px] bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : 'w-4'}`} />
+              <span className={`h-[1px] bg-white transition-all duration-300 ${isOpen ? 'w-6 -rotate-45 -translate-y-[7.5px]' : 'w-6'}`} />
+           </div>
         </button>
       </nav>
 
-      {/* Fullscreen Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 z-[90] bg-black transition-all duration-500 ease-in-out md:hidden ${
-          isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-full invisible pointer-events-none'
-        }`}
-      >
-        <div className="flex flex-col items-center justify-center h-full px-6 text-center space-y-10">
+      <div className={`fixed inset-0 z-[90] bg-[#0a0a0a] transition-all duration-700 ease-in-out md:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className="flex flex-col items-center justify-center h-full space-y-12">
           {navLinks.map((link, i) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-4xl font-serif font-light tracking-wide transition-all duration-500 transform ${
-                isOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-              }`}
-              style={{ transitionDelay: `${150 + i * 80}ms` }}
-            >
-              <span className={location.pathname === link.path ? 'text-accent italic font-normal underline decoration-accent/30 underline-offset-8' : 'text-white hover:text-accent transition-colors'}>
-                {link.name}
-              </span>
+            <Link key={link.path} to={link.path} className="text-5xl font-serif italic text-white hover:text-accent transition-colors">
+              {link.name}
             </Link>
           ))}
-          
-          <div 
-            className={`mt-16 pt-8 border-t border-white/5 w-48 transition-all duration-700 delay-500 transform ${
-              isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-            }`}
-          >
-            <p className="text-[10px] uppercase tracking-[5px] text-white/30 font-medium">
-              Trentino • Alps
-            </p>
-          </div>
+          <Link to="/admin" className="text-xs uppercase tracking-widest text-white/20">Admin Access</Link>
         </div>
       </div>
     </>
@@ -124,27 +78,40 @@ const Navbar = () => {
 };
 
 const App: React.FC = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
+  // Scroll to top on every route change
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-accent selection:text-black flex flex-col">
+    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col relative selection:bg-accent/30 selection:text-accent">
       <Navbar />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/routes" element={<RoutesPage />} />
-          <Route path="/routes/:id" element={<RouteDetail />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/experiences" element={<Experiences />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      
+      {/* 
+        Il wrapper principale utilizza la pathname come key. 
+        Questo forza il re-mount del componente Routes e innesca l'animazione CSS fadeInUp definita in index.html 
+      */}
+      <main className="flex-grow flex flex-col">
+        <div key={location.pathname} className="animate-page-entry flex-grow flex flex-col">
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/routes" element={<RoutesPage />} />
+            <Route path="/routes/:id" element={<RouteDetail />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/experiences" element={<Experiences />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </div>
       </main>
-      <footer className="py-12 px-6 text-center text-white/20 text-[9px] tracking-[4px] uppercase border-t border-white/5 mt-20">
-        © 2025 Giordano Faletti · Mountain Guide UIAGM
+      
+      <footer className={`py-8 px-6 text-center border-white/5 ${isHome ? 'absolute bottom-0 left-0 w-full border-t-0 z-20' : 'mt-24 border-t'}`}>
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
+          {/* Footer content intentionally minimal per design request */}
+        </div>
       </footer>
     </div>
   );

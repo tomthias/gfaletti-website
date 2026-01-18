@@ -10,6 +10,7 @@ export interface Route {
   tags: string[];
   mainImage: string;
   gallery: string[];
+  sketchImage?: string; // Nuova immagine tecnica scaricabile
   story: string;
   lead: string;
   approach: string;

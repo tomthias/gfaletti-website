@@ -13,7 +13,8 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a0a;
-            color: #f7f7f7;
+            color: #ffffff;
+            overflow-x: hidden;
         }
         .font-serif {
             font-family: 'Playfair+Display', serif;
@@ -40,6 +41,29 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #44ADC2;
         }
+
+        /* Page Transition Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-page-entry {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            will-change: transform, opacity;
+        }
+
+        /* Custom transitions for magazine feel */
+        .reveal-content {
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+        }
     </style>
 <script type="importmap">
 {
@@ -47,7 +71,8 @@
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0"
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
   }
 }
 </script>

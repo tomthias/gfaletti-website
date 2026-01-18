@@ -4,9 +4,8 @@ import { COURSES_DATA } from '../constants';
 
 const Courses = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20">
+    <div className="max-w-7xl mx-auto px-6 py-32 bg-[#0a0a0a]">
       <div className="mb-20">
-        <h2 className="text-accent uppercase tracking-[4px] text-xs font-semibold mb-2">Education</h2>
         <h1 className="text-5xl font-serif italic">Academy & Guiding</h1>
       </div>
 
@@ -21,7 +20,7 @@ const Courses = () => {
                </svg>
             </div>
             <h3 className="text-2xl font-serif mb-4">{course.title}</h3>
-            <p className="text-white/40 font-light leading-relaxed mb-8">
+            <p className="text-white/50 font-light leading-relaxed mb-8">
               {course.description}
             </p>
             <button className="text-[10px] uppercase tracking-widest text-accent font-bold border-b border-accent/0 hover:border-accent transition-all">

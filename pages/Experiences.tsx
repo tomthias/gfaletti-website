@@ -4,10 +4,9 @@ import { EXPERIENCES_DATA } from '../constants';
 
 const Experiences = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20">
+    <div className="max-w-4xl mx-auto px-6 py-32 bg-[#0a0a0a]">
       <div className="mb-20 text-center">
-        <h2 className="text-accent uppercase tracking-[4px] text-xs font-semibold mb-2">History</h2>
-        <h1 className="text-5xl font-serif italic">Expeditions & Awards</h1>
+        <h1 className="text-5xl font-serif italic">Experiences</h1>
       </div>
 
       <div className="space-y-0">
